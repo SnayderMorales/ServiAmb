@@ -41,3 +41,16 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+Route::get('newpost', [
+  'middleware' => 'auth',
+  'uses' => 'Post\PostController@index',
+  'as' => 'newpost'
+  ]);
+Route::post('newpost', 'Post\PostController@create');
+
+Route::get('notices', [
+  'middleware' => 'auth',
+  'uses' => 'Post\PostController@show',
+  'as' => 'notices'
+  ]);
