@@ -44,13 +44,13 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('newpost', [
   'middleware' => 'auth',
-  'uses' => 'Post\PostController@index',
+  'uses' => 'Solicitud\SolicitudController@index',
   'as' => 'newpost'
   ]);
-Route::post('newpost', 'Post\PostController@create');
+Route::post('newpost', 'Solicitud\SolicitudController@create');
 
 Route::get('notices', [
   'middleware' => 'auth',
-  'uses' => 'Post\PostController@show',
+  'uses' => 'Solicitud\SolicitudController@show',
   'as' => 'notices'
   ]);

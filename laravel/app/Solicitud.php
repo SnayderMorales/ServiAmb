@@ -9,5 +9,5 @@ class Solicitud extends Model
     protected $table = 'solicitudes';
 
 
-    protected $fillable = ['idSolicitud', 'tipoSolicitud', 'tipoResiduo','cantidad','descripcion','idEmpresa'];
+    protected $fillable = ['idSolicitud', 'tipoSolicitud', 'tipoResiduo','descripcion','titulo','cantidad','unidad','idEmpresa'];
 }

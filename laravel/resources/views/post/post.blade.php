@@ -28,7 +28,7 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label">Residuo</label>
                   <div class="col-md-6">
-                    <select name="nombreResiduo" class="form-control">
+                    <select name="tipoResiduo" class="form-control">
                       <option value="" selected="selected">- selecciona -</option>
                       <option value="papel">Papel</option>
                       <option value="hierro">Hierro</option>
@@ -37,13 +37,32 @@
                   </div>
                   </div>
 
+
+									<div class="form-group">
+		                <label class="col-md-4 control-label">Cantidad</label>
+		                <div class="col-md-6">
+		                <input type="text" class="form-control" name="cantidad" cols="5" rows="5">
+		                </div>
+		                </div>
+
+										<div class="form-group">
+		                  <label class="col-md-4 control-label">Unidad</label>
+		                  <div class="col-md-6">
+		                    <select name="unidad" class="form-control">
+		                      <option value="" selected="selected">- selecciona -</option>
+		                      <option value="kg">Kg</option>
+		                      <option value="tn">Tn</option>
+		                    </select>
+		                  </div>
+		                  </div>
+
                   <div class="form-group">
-                    <label class="col-md-4 control-label">Transporte</label>
+                    <label class="col-md-4 control-label">Tipo de Solicitud</label>
                     <div class="col-md-6">
-                      <select name="transporte" class="form-control">
+                      <select name="tipoSolicitud" class="form-control">
                         <option value="" selected="selected">- selecciona -</option>
-                        <option value="1">Si</option>
-                        <option value="0">No</option>
+                        <option value="Vender">Vender</option>
+                        <option value="Gestionar">Gestionar</option>
                       </select>
                     </div>
                     </div>

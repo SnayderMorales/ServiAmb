@@ -19,6 +19,9 @@ class EmpresaTable extends Migration
           $table->string('nombre')->unique();
           $table->string('razonSocial');
           $table->string('idEmpresaResiduo');
+          $table->string('gestor');
+          $table->string('vendedor');
+          $table->string('comprador');
           $table->rememberToken();
           $table->timestamps();
           });

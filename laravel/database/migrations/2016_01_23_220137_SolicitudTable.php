@@ -17,9 +17,11 @@ class SolicitudTable extends Migration
           $table->string('idSolicitud')->unique();
           $table->string('tipoSolicitud');
           $table->string('tipoResiduo');
-          $table->string('cantidad');
+          $table->string('titulo');
+          $table->double('cantidad');
+          $table->string('unidad');
           $table->string('descripcion');
-          $table->string('idEmpresa')->unique();
+          $table->string('idEmpresa');
           $table->rememberToken();
           $table->timestamps();
         });

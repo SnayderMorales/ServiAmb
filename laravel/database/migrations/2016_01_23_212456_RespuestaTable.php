@@ -15,9 +15,10 @@ class RespuestaTable extends Migration
       Schema::create('respuestas', function (Blueprint $table) {
           $table->increments('id');
           $table->string('idRespuesta')->unique();
+          $table->string('idEmpresa')->unique();
           $table->string('tipoRespuesta');
           $table->string('descripcion');
-          $table->string('valor');
+          $table->double('valor');
           $table->rememberToken();
           $table->timestamps();
         });

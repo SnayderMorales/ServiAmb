@@ -13,28 +13,28 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">@lang('validation.attribute.name')</label>
+							<label class="col-md-4 control-label">Nombre</label>
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">@lang('validation.attribute.email')</label>
+							<label class="col-md-4 control-label">E-mail</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">@lang('validation.attribute.password')</label>
+							<label class="col-md-4 control-label">Contraseña</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">@lang('validation.attribute.password_confirmation')</label>
+							<label class="col-md-4 control-label">Confirmar Contraseña</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password_confirmation">
 							</div>
@@ -43,14 +43,27 @@
 						<div class="form-group">
 						<label class="col-md-4 control-label">Intereses</label>
 							<div class="col-md-6">
-                        <select name="role">
-                          <option value="" selected="selected">- selecciona -</option>
-                          <option value="comprador">Comprar</option>
-                          <option value="vendedor">Vender</option>
-                          <option value="gestor">Gestionar</option>
-                        </select>
+                          <input type="checkbox" name="comprador" value="comprador">Comprar
+                          <input type="checkbox" name="vendedor" value="vender">Vender
+													<input type="checkbox" name="gestor" value="gestor">Gestor
 												</div>
 												</div>
+
+												<div class="form-group">
+													<label class="col-md-4 control-label">Nit</label>
+													<div class="col-md-6">
+														<input type="text" class="form-control" name="nit">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-md-4 control-label">Razon Social</label>
+													<div class="col-md-6">
+														<textarea type="text" class="form-control" name="razonSocial" cols="40" rows="5"></textarea>
+													</div>
+												</div>
+
+
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">

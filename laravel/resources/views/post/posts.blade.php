@@ -7,18 +7,14 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Bandeja de Interes</div>
 				<div class="panel-body">
-          @forelse ($posts as $post)
+          @forelse ($solicitudes as $solicitud)
           <div class="row">
               <div class="col-sm-12 portfolio-item">
-                  <h1>{{ $post->titulo }}</h1>
-                  <small>{{ $post->created_at }}</small>
-                  <p>{{ $post->descripcion }}</p>
-                  <h4>filtros: </h4> <a>{{ $post->nombreResiduo }}</a>
-                  @if ( $post->transporte  == 1)
-                  <a>TransporteIncluido</a>
-                  @else
-                  <a>TransporteNoIncluido</a>
-                   @endif
+                  <h1>{{ $solicitud->titulo }}</h1>
+                  <small>{{ $solicitud->created_at }}</small>
+                  <p>{{ $solicitud->descripcion }}</p>
+									<p>Cantidad: {{ $solicitud->cantidad }} {{ $solicitud->unidad }}</p>
+                  <p><h4>Filtros: </h4> <a href="#">{{ $solicitud->tipoResiduo }}</a></p>
                    <p><button type="submit" class="btn btn-primary">
                      interesante
                      </button>
