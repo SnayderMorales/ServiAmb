@@ -1,61 +1,55 @@
 <?php
 
-namespace App\Http\Controllers\Solicitud;
+namespace App\Http\Controllers\Propuesta;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Solicitud;
+use App\Respuesta;
 use Validator;
 use DB;
 use Carbon\Carbon;
 
-
-class SolicitudController extends Controller
+class PropuestaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('post/post');
+        return view('propuesta/mipropuesta');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
     {
       $this ->validate($request, [
-            'titulo' => 'required|max:40',
             'descripcion' => 'required|max:1000',
-            'tipoResiduo' => 'required',
-            'cantidad' => 'required|max:40',
-            'unidad' => 'required',
-            'tipoSolicitud' => 'required',
-
+            'tipoRespuesta' => 'required',
+            'valor' => 'required|max:40',
         ]);
-        $post = new Solicitud;
-        $post -> titulo = $request->titulo;
+        $post = new Respuesta;
         $post -> descripcion = $request->descripcion;
-        $post -> tipoResiduo = $request->tipoResiduo;
-        $post -> cantidad = $request->cantidad;
-        $post -> unidad = $request->unidad;
-        $post -> tipoSolicitud = $request->tipoSolicitud;
+        $post -> tipoRespuesta = $request->tipoRespuesta;
+        $post -> valor = $request->valor;
         $post ->save();
-        return 	view('post/post');
+        return 	view('propuesta/mipropuesta');
+
+        return dd;
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -66,22 +60,18 @@ class SolicitudController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-      $solicitudes = \DB::table('solicitudes')
-      ->select('*')
-      ->orderBy('id','desc')->get();
-
-      return view('post\posts',['solicitudes'=>$solicitudes]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -91,9 +81,9 @@ class SolicitudController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
@@ -104,7 +94,7 @@ class SolicitudController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

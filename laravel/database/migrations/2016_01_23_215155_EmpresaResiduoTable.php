@@ -14,9 +14,9 @@ class EmpresaResiduoTable extends Migration
     {
       Schema::create('empresas_residuo', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('idEmpresaResiduo')->unique();
-          $table->string('idEmpresa')->unique();
-          $table->string('idResiduo')->unique();
+          $table->string('idEmpresaResiduo');
+          $table->string('idEmpresa');
+          $table->string('idResiduo');
           $table->rememberToken();
           $table->timestamps();
           });

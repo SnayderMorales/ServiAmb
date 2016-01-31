@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layoutt')
 
 @section('content')
 <div class="container-fluid">
@@ -7,6 +7,8 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Bandeja de Interes</div>
 				<div class="panel-body">
+
+
           @forelse ($solicitudes as $solicitud)
           <div class="row">
               <div class="col-sm-12 portfolio-item">
@@ -18,7 +20,7 @@
                    <p><button type="submit" class="btn btn-primary">
                      interesante
                      </button>
-                     <button type="submit" class="btn btn-primary">
+                     <button type="submit" href="{{ route('mipropuesta') }}" class="btn btn-primary">
                        Propuesta
                      </button>
                    </p>

@@ -14,7 +14,7 @@ class ResiduoTable extends Migration
     {
           Schema::create('residuos', function (Blueprint $table) {
               $table->increments('id');
-              $table->string('idResiduo')->unique();
+              $table->string('idResiduo');
               $table->string('nombre')->unique();
               $table->string('descripcion');
               $table->string('idEmpresaResiduo')->unique();

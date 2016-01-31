@@ -58,14 +58,14 @@ class AuthController extends Controller
     protected function create(array $data)
     {
 
-      Empresa::create([
+      /*Empresa::create([
         'nombre' => $data['name'],
         'nit' => $data['nit'],
         'comprador' => $data['comprador'],
         'vendedor' => $data['vendedor'],
         'gestor' => $data['gestor'],
         'razonSocial' => $data['razonSocial'],
-        ]);
+        ]);*/
       return User::create([
           'name' => $data['name'],
           'email' => $data['email'],

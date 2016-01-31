@@ -14,7 +14,7 @@ class EmpresaTable extends Migration
     {
       Schema::create('empresas', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('idEmpresa')->unique();
+          $table->string('idEmpresa');
           $table->string('nit')->unique();
           $table->string('nombre')->unique();
           $table->string('razonSocial');

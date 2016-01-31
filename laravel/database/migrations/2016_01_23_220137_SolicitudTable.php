@@ -14,7 +14,7 @@ class SolicitudTable extends Migration
     {
       Schema::create('solicitudes', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('idSolicitud')->unique();
+          $table->string('idSolicitud');
           $table->string('tipoSolicitud');
           $table->string('tipoResiduo');
           $table->string('titulo');

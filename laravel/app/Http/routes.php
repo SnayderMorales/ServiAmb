@@ -54,3 +54,11 @@ Route::get('notices', [
   'uses' => 'Solicitud\SolicitudController@show',
   'as' => 'notices'
   ]);
+
+
+  Route::post('propuesta', 'Propuesta\PropuestaController@create');
+  Route::get('propuesta', [
+    'middleware' => 'auth',
+    'uses' => 'Propuesta\PropuestaController@index',
+    'as' => 'propuesta'
+    ]);
