@@ -25,17 +25,19 @@
                 </div>
                 </div>
 
-                <div class="form-group">
-                  <label class="col-md-4 control-label">Residuo</label>
-                  <div class="col-md-6">
-                    <select name="tipoResiduo" class="form-control">
-                      <option value="" selected="selected">- selecciona -</option>
-                      <option value="papel">Papel</option>
-                      <option value="hierro">Hierro</option>
-                      <option value="acero">Acero</option>
-                    </select>
-                  </div>
-                  </div>
+								<div class="form-group">
+									<label class="col-md-4 control-label">Residuo</label>
+									<div class="col-md-6">
+										<select name="tipoResiduo" class="form-control">
+											<option value="" selected="selected">- selecciona -</option>
+											@forelse ($residuos as $residuo)
+											<option value="{{ $residuo->nombre }}">{{ $residuo->nombre }}</option>
+											@empty
+													<p>No hay nada por ahora...</p>
+											@endforelse
+										</select>
+									</div>
+									</div>
 
 
 									<div class="form-group">

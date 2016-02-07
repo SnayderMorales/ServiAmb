@@ -1,4 +1,4 @@
-@extends('layoutt')
+@extends('layout')
 
 @section('content')
 <div class="container-fluid">
@@ -17,13 +17,25 @@
                   <p>{{ $solicitud->descripcion }}</p>
 									<p>Cantidad: {{ $solicitud->cantidad }} {{ $solicitud->unidad }}</p>
                   <p><h4>Filtros: </h4> <a href="#">{{ $solicitud->tipoResiduo }}</a></p>
+									@if(Auth::user()->email == $solicitud->idEmpresa)
+									<a  href="#" class="btn btn-primary">
+										Borrar
+									</a>
+									<a  href="#" class="btn btn-primary">
+										Actualizar
+									</a>
+									<a  href="{{ route('ofertas') }}" class="btn btn-primary">
+										Ofertas
+									</a>
+									@else
                    <p><button type="submit" class="btn btn-primary">
                      interesante
                      </button>
-                     <button type="submit" href="{{ route('mipropuesta') }}" class="btn btn-primary">
+                     <a  href="{{ route('propuesta') }}" class="btn btn-primary">
                        Propuesta
-                     </button>
+                     </a>
                    </p>
+									 @endif
               </div>
           </div>
           @empty

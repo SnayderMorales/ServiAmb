@@ -50,6 +50,20 @@
 												</div>
 
 												<div class="form-group">
+						              <label class="col-md-4 control-label">Interes de Residuo</label>
+						              <div class="col-md-6">
+						                <select name="residuo" class="form-control">
+						                  <option value="" selected="selected">- selecciona -</option>
+															@forelse ($residuos as $residuo)
+						                  <option value="{{ $residuo->nombre }}">{{ $residuo->nombre }}</option>
+															@empty
+																	<p>No hay nada por ahora...</p>
+															@endforelse
+						                </select>
+						              </div>
+						              </div>
+
+												<div class="form-group">
 													<label class="col-md-4 control-label">Nit</label>
 													<div class="col-md-6">
 														<input type="text" class="form-control" name="nit">
@@ -62,6 +76,7 @@
 														<textarea type="text" class="form-control" name="razonSocial" cols="40" rows="5"></textarea>
 													</div>
 												</div>
+
 
 
 

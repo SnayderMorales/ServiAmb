@@ -34,6 +34,13 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
+
+    public function register()
+    {
+      $residuos = \ DB::table('residuos')->get();
+
+      return view('auth\register',['residuos'=>$residuos]);
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -46,6 +53,9 @@ class AuthController extends Controller
             'name' => 'required|max:60',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:7',
+            'residuo' => 'required',
+            'nit' => 'required|max:60',
+            'razonSocial' => 'required|max:60',
         ]);
     }
 
@@ -57,15 +67,17 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-
-      /*Empresa::create([
+      
+      Empresa::create([
+        'idEmpresa'=>$data['email'],
         'nombre' => $data['name'],
         'nit' => $data['nit'],
         'comprador' => $data['comprador'],
         'vendedor' => $data['vendedor'],
         'gestor' => $data['gestor'],
         'razonSocial' => $data['razonSocial'],
-        ]);*/
+        'idEmpresaResiduo' => $data['residuo'],
+        ]);
       return User::create([
           'name' => $data['name'],
           'email' => $data['email'],

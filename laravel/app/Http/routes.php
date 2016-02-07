@@ -29,7 +29,7 @@ Route::get('logout', [
 
 // Registration routes...
 Route::get('register', [
-    'uses'=> 'Auth\AuthController@getRegister',
+    'uses'=> 'Auth\AuthController@register',
   'as' => 'register'
   ]);
 Route::post('register', 'Auth\AuthController@postRegister');
@@ -62,3 +62,24 @@ Route::get('notices', [
     'uses' => 'Propuesta\PropuestaController@index',
     'as' => 'propuesta'
     ]);
+
+
+    Route::get('subasta', [
+      'middleware' => 'auth',
+      'uses' => 'Propuesta\PropuestaController@show',
+      'as' => 'subasta'
+      ]);
+
+      Route::get('ofertas', [
+        'middleware' => 'auth',
+        'uses' => 'Propuesta\PropuestaController@showPropuesta',
+        'as' => 'ofertas'
+        ]);
+
+
+        Route::get('nuevoresiduo', [
+          //'middleware' => 'auth',
+          'uses' => 'Residuo\ResiduoController@index',
+          'as' => 'nuevoresiduo'
+          ]);
+          Route::post('nuevoresiduo', 'Residuo\ResiduoController@create');

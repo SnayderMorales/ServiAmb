@@ -17,7 +17,8 @@ class ResiduoTable extends Migration
               $table->string('idResiduo');
               $table->string('nombre')->unique();
               $table->string('descripcion');
-              $table->string('idEmpresaResiduo')->unique();
+              $table->string('clasificacion');
+              $table->string('idEmpresaResiduo');
               $table->rememberToken();
               $table->timestamps();
           });

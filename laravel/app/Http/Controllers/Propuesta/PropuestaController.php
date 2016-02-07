@@ -32,17 +32,17 @@ class PropuestaController extends Controller
     {
       $this ->validate($request, [
             'descripcion' => 'required|max:1000',
-            'tipoRespuesta' => 'required',
             'valor' => 'required|max:40',
         ]);
+        $user = \Auth::user();
         $post = new Respuesta;
         $post -> descripcion = $request->descripcion;
-        $post -> tipoRespuesta = $request->tipoRespuesta;
+        $post -> idEmpresa = $user->email;
         $post -> valor = $request->valor;
         $post ->save();
         return 	view('propuesta/mipropuesta');
 
-        return dd;
+
     }
 
     /**
@@ -62,9 +62,14 @@ class PropuestaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showPropuesta()
     {
-        //
+      //id
+      $respuestas = \DB::table('respuestas')
+      ->select('*')
+      ->orderBy('id','desc')->get();
+
+      return view('propuesta/subasta',['respuestas'=>$respuestas]);
     }
 
     /**
@@ -73,9 +78,13 @@ class PropuestaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function show()
     {
-        //
+      $solicitudes = \DB::table('solicitudes')
+      ->select('*')
+      ->orderBy('id','desc')->get();
+
+      return view('propuesta/respuesta',['solicitudes'=>$solicitudes]);
     }
 
     /**

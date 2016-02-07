@@ -13,7 +13,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="assets/img/sla2.jpg" alt="...">
+        <img src="/.../assets/img/sla2.jpg" alt="...">
         <div class="carousel-caption">
           <h1>Gestion de Residuos</h1>
           <p>Deshágase  de forma segura de sus residuos empresariales través de empresas encargada en el manejo de residuos.</p>
@@ -88,7 +88,7 @@
 
     </div>
   </div>
-  <br><br><br><br>>
+  <br><br><br><br>
 </section>
 
 <section id="job"><!-- Explicasion a que dedica la empresa -->
@@ -182,7 +182,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="well">
-          <img class="center-block" src="assets/img/socios/1.jpg" alt="">
+        <img  src="..\laravel\img\1.jpg" >
           <h3 class="text-center">Liliana Castillo </h3>
           <p class="text-center">Ingeniera Ambiental</p>
           <div class="text-center">
@@ -221,7 +221,7 @@
       </div>
       <div class="col-md-3">
         <div class="well">
-          <img class="center-block" src="assets/img/socios/4.jpg" alt="">
+          <img class="center-block" src="assets\img\socios\4.jpg" alt="">
           <h3 class="text-center">Keiner Pajaro </h3>
           <p class="text-center">Ingeniero de Sistemas</p>
           <div class="text-center">

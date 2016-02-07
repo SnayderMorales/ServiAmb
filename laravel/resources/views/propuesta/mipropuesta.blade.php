@@ -11,16 +11,6 @@
 
           <form class="form-horizontal" role="form" method="POST" action="{{ route('propuesta') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="form-group">
-              <label class="col-md-4 control-label">Tipo de Respuesta</label>
-              <div class="col-md-6">
-                <select name="tipoRespuesta" class="form-control">
-                  <option value="" selected="selected">- selecciona -</option>
-                  <option value="Comprar">Comprar</option>
-                  <option value="Gestionar">Gestionar</option>
-                </select>
-              </div>
-              </div>
 
               <div class="form-group">
                 <label class="col-md-4 control-label">Descripcion</label>
