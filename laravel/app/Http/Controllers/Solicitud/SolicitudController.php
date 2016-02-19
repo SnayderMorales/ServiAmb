@@ -74,8 +74,14 @@ class SolicitudController extends Controller
      */
     public function show()
     {
+      $user = \Auth::user();
+      $empresa =  \DB::table('empresas')
+      ->select('*')
+      ->where('idEmpresa',$user->email)->first();
       $solicitudes = \DB::table('solicitudes')
       ->select('*')
+      ->where('idEmpresa',$user->email)
+      ->orWhere('tipoResiduo',$empresa->idEmpresaResiduo)
       ->orderBy('id','desc')->get();
 
       return view('post\posts',['solicitudes'=>$solicitudes]);

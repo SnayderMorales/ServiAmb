@@ -43,9 +43,9 @@
 						<div class="form-group">
 						<label class="col-md-4 control-label">Intereses</label>
 							<div class="col-md-6">
-                          <input type="checkbox" name="comprador" value="comprador">Comprar
-                          <input type="checkbox" name="vendedor" value="vender">Vender
-													<input type="checkbox" name="gestor" value="gestor">Gestor
+                          <input type="checkbox" name="comprador" value="1">Comprar
+                          <input type="checkbox" name="vendedor" value="1">Vender
+													<input type="checkbox" name="gestor" value="1">Gestor
 												</div>
 												</div>
 

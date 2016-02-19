@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Respuesta;
+use App\Negocio;
 use Validator;
 use DB;
 use Carbon\Carbon;
@@ -31,7 +32,7 @@ class PropuestaController extends Controller
     public function create(Request $request)
     {
       $this ->validate($request, [
-            'descripcion' => 'required|max:1000',
+            'descripcion' => 'required|max:2000',
             'valor' => 'required|max:40',
         ]);
         $user = \Auth::user();
@@ -40,6 +41,10 @@ class PropuestaController extends Controller
         $post -> idEmpresa = $user->email;
         $post -> valor = $request->valor;
         $post ->save();
+        $negocio = new negocio;
+        $negocio -> idSolicitud = $request->idSolicitud;
+        $negocio -> idRespuesta = $post->id;
+        $negocio -> estado = 1;
         return 	view('propuesta/mipropuesta');
 
 
@@ -65,8 +70,10 @@ class PropuestaController extends Controller
     public function showPropuesta()
     {
       //id
+
       $respuestas = \DB::table('respuestas')
       ->select('*')
+      //->where()
       ->orderBy('id','desc')->get();
 
       return view('propuesta/subasta',['respuestas'=>$respuestas]);

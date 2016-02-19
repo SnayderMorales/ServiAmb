@@ -54,7 +54,7 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:7',
             'residuo' => 'required',
-            'nit' => 'required|max:60',
+            'nit' => 'required|max:60|unique',
             'razonSocial' => 'required|max:60',
         ]);
     }
@@ -67,14 +67,30 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-      
+
+      if(isset($data['comprador'])){
+        $comprador = $data['comprador'];
+      }else{
+        $comprador = 0;
+      }
+      if(isset($data['vendedor'])){
+        $vendedor = $data['vendedor'];
+      }else{
+        $vendedor = 0;
+      }
+      if(isset($data['gestor'])){
+        $gestor = $data['gestor'];
+      }else{
+        $gestor = 0;
+      }
+
       Empresa::create([
         'idEmpresa'=>$data['email'],
         'nombre' => $data['name'],
         'nit' => $data['nit'],
-        'comprador' => $data['comprador'],
-        'vendedor' => $data['vendedor'],
-        'gestor' => $data['gestor'],
+        'comprador' => $comprador,
+        'vendedor' => $vendedor,
+        'gestor' => $gestor,
         'razonSocial' => $data['razonSocial'],
         'idEmpresaResiduo' => $data['residuo'],
         ]);

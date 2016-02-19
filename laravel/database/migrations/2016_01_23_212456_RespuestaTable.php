@@ -19,6 +19,7 @@ class RespuestaTable extends Migration
           $table->string('tipoRespuesta');
           $table->string('descripcion');
           $table->double('valor');
+          $table->integer('estado');
           $table->rememberToken();
           $table->timestamps();
         });
