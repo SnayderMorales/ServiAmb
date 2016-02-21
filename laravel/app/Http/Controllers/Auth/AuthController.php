@@ -54,7 +54,7 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:7',
             'residuo' => 'required',
-            'nit' => 'required|max:60|unique',
+            'nit' => 'required|max:60|unique:empresas',
             'razonSocial' => 'required|max:60',
         ]);
     }

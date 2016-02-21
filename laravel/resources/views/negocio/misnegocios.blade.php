@@ -8,17 +8,17 @@
 				<div class="media">
 					<div class="media-left">
 						<div class="letra">
-							<p class="text-big text-center"><b>N</b></h1>
+							<p class="text-big text-center"><b>Pr</b></h1>
 						</div>
 					</div>
 					<div class="media-body">
-						<h4 class="media-heading">Mi Propuestas</h4>
+						<h4 class="media-heading">Mis Negocios</h4>
 						<p>
 							@forelse ($solicitudes as $solicitud)
-							@if((Auth::user()->email == $solicitud->idEmpresa)and($solicitud->estado == 0))
+							@if((Auth::user()->email == $solicitud->idEmpresa)and($solicitud->estado == 1))
 		          <div class="row">
 		              <div class="col-sm-12 portfolio-item">
-		                  <a href="subasta/ofertas/{{ $solicitud->id }}"><h1>{{ $solicitud->titulo }}</h1></a>
+		                  <a href="negocios/{{ $solicitud->id }}"><h1>{{ $solicitud->titulo }}</h1></a>
 		                  <small>{{ $solicitud->created_at }}</small>
 		              </div>
 		          </div>

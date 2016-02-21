@@ -12,14 +12,14 @@
 						</div>
 					</div>
 					<div class="media-body">
-						<h4 class="media-heading">Mi Propuestas</h4>
+						<h4 class="media-heading">Mis Negocios</h4>
 						<p>
-							@forelse ($solicitudes as $solicitud)
-							@if((Auth::user()->email == $solicitud->idEmpresa)and($solicitud->estado == 0))
+							@forelse ($respuestas as $respuesta)
+							@if((Auth::user()->email == $respuesta->idEmpresa)and($respuesta->estado == 1))
 		          <div class="row">
 		              <div class="col-sm-12 portfolio-item">
-		                  <a href="subasta/ofertas/{{ $solicitud->id }}"><h1>{{ $solicitud->titulo }}</h1></a>
-		                  <small>{{ $solicitud->created_at }}</small>
+		                  <a href="procesos/{{ $respuesta->id }}"><h1>{{ $respuesta->descripcion }}</h1></a>
+		                  <small>{{ $respuesta->created_at }}</small>
 		              </div>
 		          </div>
 							@endif

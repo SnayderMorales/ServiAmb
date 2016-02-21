@@ -16,6 +16,7 @@ class RespuestaTable extends Migration
           $table->increments('id');
           $table->string('idRespuesta');
           $table->string('idEmpresa');
+          $table->string('idSolicitud');
           $table->string('tipoRespuesta');
           $table->string('descripcion');
           $table->double('valor');

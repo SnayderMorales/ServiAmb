@@ -51,6 +51,7 @@ class SolicitudController extends Controller
         $post -> unidad = $request->unidad;
         $post -> tipoSolicitud = $request->tipoSolicitud;
         $post -> idEmpresa = $user->email;
+        $post -> estado = 0;
         $post ->save();
         return 	view('home');
     }

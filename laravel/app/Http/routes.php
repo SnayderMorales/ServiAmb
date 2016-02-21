@@ -70,7 +70,7 @@ Route::get('notices', [
       'as' => 'subasta'
       ]);
 
-      Route::get('ofertas', [
+      Route::get('subasta/ofertas/{id}', [
         'middleware' => 'auth',
         'uses' => 'Propuesta\PropuestaController@showPropuesta',
         'as' => 'ofertas'
@@ -83,3 +83,36 @@ Route::get('notices', [
           'as' => 'nuevoresiduo'
           ]);
           Route::post('nuevoresiduo', 'Residuo\ResiduoController@create');
+
+          Route::post('aceptar', 'Negocio\NegocioController@create');
+          Route::get('aceptar', [
+            'middleware' => 'auth',
+            'uses' => 'Negocio\NegocioController@index',
+            'as' => 'aceptar'
+            ]);
+            Route::get('negocios/{id}', [
+              'middleware' => 'auth',
+              'uses' => 'Negocio\NegocioController@indexN',
+              'as' => 'negocio'
+              ]);
+              Route::get('negocios', [
+                'middleware' => 'auth',
+                'uses' => 'Negocio\NegocioController@index',
+                'as' => 'negocios'
+                ]);
+                Route::get('procesos/{id}', [
+                  'middleware' => 'auth',
+                  'uses' => 'Negocio\NegocioController@indexP',
+                  'as' => 'procesos'
+                  ]);
+                  Route::get('procesos', [
+                    'middleware' => 'auth',
+                    'uses' => 'Negocio\NegocioController@indexPr',
+                    'as' => 'procesos'
+                    ]);
+                      Route::post('fasei', 'Negocio\NegocioController@fasei');
+                      Route::get('fasei', [
+                        'middleware' => 'auth',
+                        'uses' => 'Negocio\NegocioController@indexP',
+                        'as' => 'fasei'
+                        ]);

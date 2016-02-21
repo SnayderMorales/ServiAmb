@@ -48,11 +48,11 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-					<a class="navbar-brand" href="#menu"><img id="img-navbar" src="assets/img/logo/logo.small.png" alt="Serviamb" /></a>
+					<a class="navbar-brand" href="#"><img id="img-navbar" src="assets/img/logo/logo.small.png" alt="Serviamb" /></a>
 		    </div>
 		  	<div id="navbar" class="navbar-collapse collapse">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Home</a></li>
+		        <li class="active"><a href="{{route('subasta')}}">Propuestas</a></li>
 		        <li><a href="#about">About</a></li>
 		        <li><a href="#contact">Contact</a></li>
 		      </ul>
@@ -140,7 +140,7 @@
             <button type="button" class="list-group-item" href=""><img id="img-icon" src="assets/img/logo/logo.small.png" alt=""> <b>ServiAmb.</b></button>
             <button type="button" class="list-group-item" href=""><span class="glyphicon glyphicon-duplicate"> </span> De interes</button>
             <button type="button" class="list-group-item" href=""><span class="glyphicon glyphicon-paperclip"> </span> Socios</button>
-            <button type="button" class="list-group-item" href=""><span class="glyphicon glyphicon-tasks"> </span> Precesos</button>
+            <a class="list-group-item" href="{{ route('procesos') }}"><span class="glyphicon glyphicon-tasks"> </span> Procesos</a>
             <button type="button" class="list-group-item" href=""><span class="glyphicon glyphicon-briefcase"></span> Egocios concretados</button>
           </div>
         </div>

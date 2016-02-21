@@ -40,12 +40,14 @@ class PropuestaController extends Controller
         $post -> descripcion = $request->descripcion;
         $post -> idEmpresa = $user->email;
         $post -> valor = $request->valor;
+        $post -> idSolicitud = $request->idSolicitud;
         $post ->save();
-        $negocio = new negocio;
+        $negocio = new Negocio;
         $negocio -> idSolicitud = $request->idSolicitud;
         $negocio -> idRespuesta = $post->id;
         $negocio -> estado = 1;
-        return 	view('propuesta/mipropuesta');
+        $negocio ->save();
+        return 	redirect('notices')->with('success', 'Ninguno');
 
 
     }
@@ -67,13 +69,13 @@ class PropuestaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showPropuesta()
+    public function showPropuesta($id)
     {
-      //id
+
 
       $respuestas = \DB::table('respuestas')
       ->select('*')
-      //->where()
+      ->where('idSolicitud',$id)
       ->orderBy('id','desc')->get();
 
       return view('propuesta/subasta',['respuestas'=>$respuestas]);

@@ -22,6 +22,7 @@ class SolicitudTable extends Migration
           $table->string('unidad');
           $table->string('descripcion');
           $table->string('idEmpresa');
+          $table->integer('estado');
           $table->rememberToken();
           $table->timestamps();
         });
