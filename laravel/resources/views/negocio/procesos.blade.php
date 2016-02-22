@@ -32,7 +32,7 @@
           <h3 class="text-center">Desea continuar entrar en contacto.</h3>
           <p class="text-justify">La solicitud acordada: <h4>{{ $solicitudes->titulo }} </h4> </p>
           <p class="text-justify"> {{ $solicitudes->descripcion }} </p>
-          <p class="text-justify"> {{ $solicitudes->cantidad }} Valor: {{ $solicitudes->cantidad }}. </p>
+          <p class="text-justify"> {{ $solicitudes->cantidad }} {{ $solicitudes->unidad }}. </p>
           <form role="form" method="POST" action="{{ route('fasei') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group has-feedback">
@@ -51,13 +51,24 @@
         </div>
 
         <div role="tabpanel" class="tab-pane" id="paso2">
-          <h3 class="text-center">Doble acuerdo</h3>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          @if($solicitudes->estado  == 2)
+          <h3 class="text-center"><a href="s/perfil/{{  $solicitudes->id  }}" >Informacion del contacto.</a></h3>
+
+
+
+            
+
+
+
+
+          @else
+            Para continuar debe aceptar el primer paso.
+          @endif
         </div>
 
         <div role="tabpanel" class="tab-pane" id="paso3">
-          <h3 class="text-center">Negociaciones directas careo</h3>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3 class="text-center">Acuerdo cerrado</h3>
+          <p class="text-justify">Gracias por usar nuestro servicio.</p>
         </div>
 
       </div>

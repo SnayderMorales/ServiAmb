@@ -29,7 +29,6 @@ class NegocioController extends Controller
       ->select('*')
       ->where('idEmpresa',$user->email)
       ->orderBy('id','desc')->get();
-
       return view('negocio/misnegocios',['solicitudes'=>$solicitudes]);
 
     }
@@ -41,10 +40,18 @@ class NegocioController extends Controller
       ->where('idSolicitud',$id)
       ->where('estado','2')
       ->first();
+      if ($fase != null){
       $respuestas = \DB::table('respuestas')
       ->select('*')
       ->where('id',$fase->idRespuesta)
+      ->where('estado','1')
       ->first();
+    }else{
+      $respuestas = \DB::table('respuestas')
+      ->select('*')
+      ->where('id',3)
+      ->first();
+    }
       return view('negocio/negocio',['respuestas'=>$respuestas]);
     }
 
@@ -52,16 +59,23 @@ class NegocioController extends Controller
 
     public function indexP($id)
     {
+
       $fase = \DB::table('negocios')
       ->select('*')
       ->where('idRespuesta',$id)
       ->where('estado','2')
       ->first();
-
+      if ($fase != null){
       $solicitudes = \DB::table('solicitudes')
       ->select('*')
       ->where('id',$fase->idSolicitud)
       ->first();
+    }else{
+      $solicitudes = \DB::table('solicitudes')
+      ->select('*')
+      ->where('id',3)
+      ->first();
+    }
       return view('negocio/procesos',['solicitudes'=>$solicitudes]);
 
     }
@@ -99,13 +113,15 @@ class NegocioController extends Controller
 
         $solicitud = DB::table('negocios')
         ->select('*')
-        ->where('id',$request->aceptar)
+        ->where('idRespuesta',$request->aceptar)
         ->first();
 
         DB::table('solicitudes')
         ->select('[solicitudes.estado]')
         ->where('id',$solicitud->idSolicitud)
         ->update(['estado' => 1]);
+
+
         return redirect('subasta')->with('success', 'Ninguno');
     }
 
@@ -117,22 +133,26 @@ class NegocioController extends Controller
         ]);
       DB::table('negocios')
       ->select('[negocios.estado]')
-      ->where('idRespuesta',$request->aceptar)
+      ->where('idSolicitud',$request->aceptar)
+      ->where('estado','2')
       ->update(['estado' => 3]);
-
-      DB::table('respuestas')
-      ->select('[respuestas.estado]')
-      ->where('id',$request->aceptar)
-      ->update(['estado' => 2]);
-      $solicitud = DB::table('negocios')
-      ->select('*')
-      ->where('id',$request->aceptar)
-      ->first();
 
       DB::table('solicitudes')
       ->select('[solicitudes.estado]')
-      ->where('id',$solicitud->idSolicitud)
+      ->where('id',$request->aceptar)
+      ->update(['estado' => 2]);//error aqui para actualizar el estado de la respuesta.
+
+      $solicitud = DB::table('negocios')
+      ->select('*')
+      ->where('idSolicitud',$request->aceptar)
+      ->where('estado','3')
+      ->first();
+
+      DB::table('respuestas')
+      ->select('[respuestas.estado]')
+      ->where('id',$solicitud->idRespuesta)
       ->update(['estado' => 2]);
+
       return redirect('procesos')->with('success', 'Ninguno');
     }
 
@@ -144,11 +164,36 @@ class NegocioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function perfil($id)
     {
-        //
+      $idEmpresa = DB::table('solicitudes')
+      ->select('*')
+      ->where('id',$id)
+      ->first();
+
+      $empresas = DB::table('empresas')
+      ->select('*')
+      ->where('idEmpresa',$idEmpresa->idEmpresa)
+      ->first();
+
+      return view('negocio/perfil',['empresas'=>$empresas]);
     }
 
+
+    public function perfilr($id)
+    {
+      $idEmpresa = DB::table('respuestas')
+      ->select('*')
+      ->where('id',$id)
+      ->first();
+
+      $empresas = DB::table('empresas')
+      ->select('*')
+      ->where('idEmpresa',$idEmpresa->idEmpresa)
+      ->first();
+
+      return view('negocio/perfil1',['empresas'=>$empresas]);
+    }
     /**
      * Show the form for editing the specified resource.
      *

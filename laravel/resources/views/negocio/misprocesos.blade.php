@@ -15,7 +15,7 @@
 						<h4 class="media-heading">Mis Negocios</h4>
 						<p>
 							@forelse ($respuestas as $respuesta)
-							@if((Auth::user()->email == $respuesta->idEmpresa)and($respuesta->estado == 1))
+							@if((Auth::user()->email == $respuesta->idEmpresa))
 		          <div class="row">
 		              <div class="col-sm-12 portfolio-item">
 		                  <a href="procesos/{{ $respuesta->id }}"><h1>{{ $respuesta->descripcion }}</h1></a>

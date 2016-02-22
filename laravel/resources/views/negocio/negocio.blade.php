@@ -35,9 +35,12 @@
         </div>
 
         <div role="tabpanel" class="tab-pane" id="paso2">
-          <h3 class="text-center">Doble acuerdo</h3>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+          @if($respuestas->estado  == 2)
+          <h3 class="text-center"><a href="r/perfil/{{  $respuestas->id  }}" >Informacion del contacto.</a></h3>
+          <p class="text-justify">Informacion basica de su cliente.</p>
+          @else
+            Debe esperar la confirmacion de su cliente.
+          @endif</div>
 
         <div role="tabpanel" class="tab-pane" id="paso3">
           <h3 class="text-center">Negociaciones directas careo</h3>

@@ -5,7 +5,7 @@
 
 <div class="col-xs-12 col-sm-6 col-md-6"><!-- Secion de noticias -->
 	@forelse ($respuestas as $respuesta)
-	
+
 	<div class="well"><!-- noticia Nunero 1 -->
 
 		<ul class="media-list">
@@ -30,6 +30,7 @@
 						<form role="form" method="POST" action="{{ route('aceptar') }}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" class="form-control" name="aceptar" value="{{ $respuesta->id }}">
+							
 						<button class="btn btn-lg btn-block" type="submit" data-toggle="collapse" data-target="#" aria-expanded="false" aria-controls=""><span class="glyphicon glyphicon-usd"> </span> Aceptar</button>
 							</form>
 					</div>
@@ -38,7 +39,7 @@
 			</li>
 		</ul>
 
-	</div>
+
 	@empty
 			<p>No hay nada por ahora...</p>
 	@endforelse

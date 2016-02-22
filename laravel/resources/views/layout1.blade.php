@@ -48,15 +48,18 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-					<a class="navbar-brand" href="#"><img id="img-navbar" src="assets/img/logo/logo.small.png" alt="Serviamb" /></a>
+					<a class="navbar-brand" href="{{ route('notices') }}"><img id="img-navbar" src="assets/img/logo/logo.small.png" alt="Serviamb" /></a>
 		    </div>
 		  	<div id="navbar" class="navbar-collapse collapse">
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="{{route('subasta')}}">Propuestas</a></li>
-		        <li><a href="#about">About</a></li>
-		        <li><a href="#contact">Contact</a></li>
+		        <li><a href="{{ route('negocios') }}">Negocios</a></li>
+		        <li><a href="{{ route('procesos') }}">Procesos</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
+						<li>
+							<button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg">Publicar</button>
+						</li>
 						<li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> <span class="caret"></span></a>
 		          <ul class="dropdown-menu media-list">
@@ -137,11 +140,10 @@
 
         <div class="col-xs-12 col-sm-3 col-md-3"><!-- bara de menu laterar a la izquiedad del monitor-->
           <div class="list-group">
-            <button type="button" class="list-group-item" href=""><img id="img-icon" src="assets/img/logo/logo.small.png" alt=""> <b>ServiAmb.</b></button>
-            <button type="button" class="list-group-item" href=""><span class="glyphicon glyphicon-duplicate"> </span> De interes</button>
-            <button type="button" class="list-group-item" href=""><span class="glyphicon glyphicon-paperclip"> </span> Socios</button>
+            <a type="button" class="list-group-item" href="{{ route('notices') }}"><img id="img-icon" src="assets/img/logo/logo.small.png" alt=""> <b>ServiAmb.</b></a>
+            <a type="button" class="list-group-item" href="{{ route('subasta') }}"><span class="glyphicon glyphicon-duplicate"> </span> Propuesta</a>
             <a class="list-group-item" href="{{ route('procesos') }}"><span class="glyphicon glyphicon-tasks"> </span> Procesos</a>
-            <button type="button" class="list-group-item" href=""><span class="glyphicon glyphicon-briefcase"></span> Egocios concretados</button>
+            <a type="button" class="list-group-item" href="{{ route('negocios') }}"><span class="glyphicon glyphicon-briefcase"></span> Negocios</a>
           </div>
         </div>
 
@@ -180,7 +182,24 @@
     </div>
     </section>
 
+		<section id="modal">
 
+
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+
+		    	<h1 class="text-center">Ventana Modal</h1>
+
+		    </div>
+		  </div>
+		</div>
+
+
+		</section>
 
 
 

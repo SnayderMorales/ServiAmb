@@ -53,7 +53,7 @@ class SolicitudController extends Controller
         $post -> idEmpresa = $user->email;
         $post -> estado = 0;
         $post ->save();
-        return 	view('home');
+        return 	redirect('notices')->with('success', 'Ninguno');
     }
 
     /**

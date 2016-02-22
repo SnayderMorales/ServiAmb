@@ -116,3 +116,14 @@ Route::get('notices', [
                         'uses' => 'Negocio\NegocioController@indexP',
                         'as' => 'fasei'
                         ]);
+
+                        Route::get('procesos/s/perfil/{id}', [
+                          'middleware' => 'auth',
+                          'uses' => 'Negocio\NegocioController@perfilr',
+                          'as' => 'perfil'
+                          ]);
+                Route::get('negocios/r/perfil/{id}', [
+                            'middleware' => 'auth',
+                            'uses' => 'Negocio\NegocioController@perfil',
+                            'as' => 'perfil'
+                            ]);
