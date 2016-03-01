@@ -1,98 +1,114 @@
 <!DOCTYPE html>
-<!DOCTYPE HTML>
-<html lang="en-US">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link rel="stylesheet" href="assets/css/style.apart.css">
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 		<link rel="icon" href="assets/img/logo/logo.small.png">
-		<title>ServiAmb</title>
-		<style media="screen">
-			#notifications{
-				width:400px;
-			}
-			#img-navbar{
-				height: 25px;
-				width: 25px;
-			}
-			.letra{
-				height: 40px;
-				width: 40px;
-			}
-			.text-big{
-				font-size: 30px;
-			}
-			#img-icon{
-				height: 25px;
-				width: 25px;
-			}
-			.media-object{
-				height: 65px;
-				width: 65px;
-			}
-		</style>
-	</head>
+    <title>ServiAmb</title>
 
-<body>
+    <!-- css -->
+    <<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="assets/index/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/index/css/nivo-lightbox.css" rel="stylesheet" />
+	<link href="assets/index/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="assets/index/css/animations.css" rel="stylesheet" />
+  <link href="assets/index/css/style.css" rel="stylesheet">
+	<link href="assets/index/color/default.css" rel="stylesheet">
 
-	<section id="menu"><!-- menu -->
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		      	<span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-					<a class="navbar-brand" href="#menu"><img id="img-navbar" src="assets/img/logo/logo.small.png" alt="Serviamb" /></a>
-		    </div>
-		  	<div id="navbar" class="navbar-collapse collapse">
-		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Home</a></li>
-		        <li><a href="#about">About</a></li>
-		        <li><a href="#contact">Contact</a></li>
-		      </ul>
-		      <ul class="nav navbar-nav navbar-right">
-		      </ul>
-		    </div><!--/.nav-collapse -->
-		  </div>
-		</nav>
-	</section><!-- menu -->
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
 
+    <!-- Navigation -->
+    <div id="navigation">
+        <nav class="navbar navbar-custom" role="navigation">
+                              <div class="container">
+                                    <div class="row">
+                                          <div class="col-md-2">
+                                                   <div class="site-logo">
 
+                                                     <p><a href="{{ route('home') }}" class="brand"><img src="assets/index/img/nombre.png" WIDTH=200 HEIGHT=30></a></p>
+                                                    </div>
+                                          </div>
+
+
+                                          <div class="col-md-10">
+
+                                                      <!-- Brand and toggle get grouped for better mobile display -->
+                                          <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                                <i class="fa fa-bars"></i>
+                                                </button>
+                                          </div>
+                                                      <!-- Collect the nav links, forms, and other content for toggling -->
+                                                      <div class="collapse navbar-collapse" id="menu">
+                                                            <ul class="nav navbar-nav navbar-right">
+
+																															<li><a href="{{ route('login') }}">Login</a></li>
+																															<li><a href="{{ route('register') }}">Register</a></li>
+                                                            </ul>
+                                                      </div>
+                                                      <!-- /.Navbar-collapse -->
+
+                                          </div>
+                                    </div>
+                              </div>
+                              <!-- /.container -->
+                        </nav>
+    </div>
+    <!-- /Navigation -->
 
 
 
 
 
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ route('login') }}">Login</a></li>
-						<li><a href="{{ route('register') }}">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ route('logout') }}">Logout</a></li>
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
+
+
+
+
+
 
 	@yield('content')
 
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="footer-menu">
+						<li><a href="route('home')">Home</a></li>
+
+					</ul>
+				</div>
+				<div class="col-md-6 text-right">
+					<p>&copy;Copyright 2016 - <a href="#intro">ServiAmb</a> by ServiAmb</p>
+                    <!--
+                        All links in the footer should remain intact.
+                        Licenseing information is available at: http://bootstraptaste.com/license/
+                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Bocor
+                    -->
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Core JavaScript Files -->
+	<script src="assets/index/js/jquery.min.js"></script>
+	<script src="assets/index/http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="assets/index/js/jquery.sticky.js"></script>
+	<script src="assets/index/js/jquery.easing.min.js"></script>
+<script src="assets/index/js/jquery.scrollTo.js"></script>
+<script src="assets/index/js/jquery.appear.js"></script>
+<script src="assets/index/js/stellar.js"></script>
+<script src="assets/index/js/nivo-lightbox.min.js"></script>
+
+	<script src="assets/index/js/custom.js"></script>
+<script src="assets/index/js/css3-animate-it.js"></script>
+
 	@yield('scripts')
 </body>
 </html>

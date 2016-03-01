@@ -119,11 +119,11 @@ Route::get('notices', [
 
                         Route::get('procesos/s/perfil/{id}', [
                           'middleware' => 'auth',
-                          'uses' => 'Negocio\NegocioController@perfilr',
+                          'uses' => 'Negocio\NegocioController@perfil',
                           'as' => 'perfil'
                           ]);
                 Route::get('negocios/r/perfil/{id}', [
                             'middleware' => 'auth',
-                            'uses' => 'Negocio\NegocioController@perfil',
+                            'uses' => 'Negocio\NegocioController@perfilr',
                             'as' => 'perfil'
                             ]);

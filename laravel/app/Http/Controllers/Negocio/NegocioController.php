@@ -28,6 +28,7 @@ class NegocioController extends Controller
       $solicitudes = \DB::table('solicitudes')
       ->select('*')
       ->where('idEmpresa',$user->email)
+      ->where('estado','>','0')
       ->orderBy('id','desc')->get();
       return view('negocio/misnegocios',['solicitudes'=>$solicitudes]);
 
@@ -90,6 +91,7 @@ class NegocioController extends Controller
       $respuestas = \DB::table('respuestas')
       ->select('*')
       ->where('idEmpresa',$user->email)
+      ->where('estado','>','0')
       ->orderBy('id','desc')->get();
 
       return view('negocio/misprocesos',['respuestas'=>$respuestas]);

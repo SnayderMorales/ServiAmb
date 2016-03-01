@@ -58,7 +58,7 @@
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 						<li>
-							<button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg">Publicar</button>
+							<button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="newpost">Publicar</a></button>
 						</li>
 						<li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> <span class="caret"></span></a>

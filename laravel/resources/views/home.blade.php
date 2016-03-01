@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="icon" href="assets/img/logo/logo.small.png">
     <title>ServiAmb</title>
 
     <!-- css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/index/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="assets/index/css/nivo-lightbox.css" rel="stylesheet" />
 	<link href="assets/index/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
 	<link href="assets/index/css/animations.css" rel="stylesheet" />
@@ -22,26 +22,28 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-	<section class="hero" id="intro">
+	<section class="hero " id="intro" >
             <div class="container">
               <div class="row">
                 <div class="col-md-12 text-right navicon">
-                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                  <a id="nav-toggle" class="nav_slide_button" href="assets/index/#"><span></span></a>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center inner">
+
 					<div class="animatedParent">
-						<h1 class="animated fadeInDown">ServiAmb</h1>
-						<p class="animated fadeInUp" ><img src="assets/index/img/nombre.jpg" /> </p>
+							<br><br><br><br><br><br><br><br><br><br><br><br>
+						<p class="animated fadeInUp" >
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo/logo.small.png" WIDTH=120 HEIGHT=120 /><br>
+						 	<img src="assets/index/img/nombre.png" WIDTH=100 HEIGHT=20> <br>
+							<a href="{{ route('register') }}" class="learn-more-btn btn-scroll-animatedParent">Registrate</a>
+							<a href="{{ route('login') }}" class="learn-more-btn btn-scroll-animatedParent">Entrar</a>
+						</p>
+
+
 					</div>
 			   </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                  <a href="{{ route('register') }}" class="learn-more-btn btn-scroll-animatedParent">Unete</a>
-                  <a href="{{ route('login') }}" class="learn-more-btn btn-scroll-animatedParent">Entrar</a>
-                </div>
               </div>
             </div>
     </section>
@@ -55,7 +57,7 @@
                                           <div class="col-md-2">
                                                    <div class="site-logo">
 
-                                                     <p><a href="index.html" class="brand"><img src="assets/index/img/nombre.jpg" WIDTH=200 HEIGHT=30></a></p>
+                                                     <p><a href="{{ route('home') }}" class="brand"><img src="assets/index/img/nombre.png" WIDTH=200 HEIGHT=30></a></p>
                                                     </div>
                                           </div>
 
@@ -72,13 +74,13 @@
                                                       <div class="collapse navbar-collapse" id="menu">
                                                             <ul class="nav navbar-nav navbar-right">
 
-                                                                  <li class="active"><a href="#intro">Home</a></li>
-                                                                  <li><a href="#about">Quienes Somos</a></li>
-																  <li><a href="#service">Servicios</a></li>
-                                                                  <li><a href="#works">Nuestro Equipo</a></li>
-                                                                  <li><a href="#contact">Contacto</a></li>
-                                                                  <li><a href="{{ route('register') }}" >Unete</a></li>
-                                                                  <li><a href="{{ route('login') }}" >Entrar</a></li>
+                                                                  <li class="active"><a href="assets/index/#intro">Home</a></li>
+                                                                  <li><a href="assets/index/#about">Quienes Somos</a></li>
+																  <li><a href="assets/index/#service">Servicios</a></li>
+                                                                  <li><a href="assets/index/#works">Nuestro Equipo</a></li>
+                                                                  <li><a href="{{ route('register') }}">Registrate</a></li>
+                                                                  <li><a href="{{ route('login') }}">Entrar</a></li>
+                                                                  <li><a href="assets/index/#contact">Contacto</a></li>
                                                             </ul>
                                                       </div>
                                                       <!-- /.Navbar-collapse -->
@@ -121,7 +123,7 @@
 					<p>
 					ServiAmb, realizará acompañamiento de los servicios, a través de evaluación y seguimiento desde la solicitud del servicio, hasta el cumplimiento del mismo. Para lo anterior, ServiAmb contará con una interfaz móvil que le permitirá al cliente, ver en tiempo real, el progreso e historial de su servicio, sin descartar que lo anteriormente expuesto, lo pueda observar en la página web.
 					</p>
-					<a href="#service" class="btn btn-skin btn-scroll">Servicios</a>
+
 				</div>
             </div>
 
@@ -129,8 +131,68 @@
         </div>
 		</div>
 
+		<div class="container marginbot-50">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div>
+					<div class="section-heading text-center">
+
+					<div class="divider-header"></div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="text-center">
+		<div class="container">
+
+        <div class="row animatedParent">
+            <div class="col-xs-6 col-sm-4 col-md-4">
+				<div class="animated rotateInDownLeft">
+                <div class="service-box">
+					<div class="service-icon">
+						<span ><img src="assets/index/img/mision.jpg" WIDTH=50 HEIGHT=50></span>
+					</div>
+					<div class="service-desc">
+						<h5>Misión</h5>
+						<div class="divider-header"></div>
+						<p>
+						Proporcionarle a la comunidad empresarial, institucional y comercial, una solución ambientalmente moderna, a través de la interacción entre generadores, gestores y compradores de residuos sólidos legalmente constituidos, dentro de un mercado virtual, con el fin de minimizar los impactos ambientales y sociales que resultan de diversos procesos.
+
+												</p>
+						<a href="assets/index/#" class="btn btn-skin">Home</a>
+					</div>
+                </div>
+				</div>
+            </div>
+			<div class="col-xs-6 col-sm-4 col-md-4">
+
+
+            </div>
+			<div class="col-xs-6 col-sm-4 col-md-4">
+				<div class="animated rotateInDownLeft slower">
+                <div class="service-box">
+					<div class="service-icon">
+						<span ><img src="assets/index/img/vision.jpg" WIDTH=50 HEIGHT=50></span>
+					</div>
+					<div class="service-desc">
+						<h5>Visión </h5>
+						<div class="divider-header"></div>
+						<p>
+						Constituir una plataforma virtual que brinde de manera segura y organizada, la oportunidad de gestionar, vender y comprar residuos sólidos,<br> garantizando la satisfacción de los clientes y colaboradores.
+
+						</p>
+						<a href="assets/index/#" class="btn btn-skin">Home</a><br><br>
+
+					</div>
+                </div>
+				</div>
+            </div>
 	</section>
-	<!-- /Section: about -->
+	<!-- /Section: quienes somos -->
+
 
 
 	<!-- Section: services -->
@@ -157,7 +219,7 @@
 				<div class="animated rotateInDownLeft">
                 <div class="service-box">
 					<div class="service-icon">
-						<span ><img src="assets/index//img/vender.png" WIDTH=50 HEIGHT=50></span>
+						<span ><img src="assets/index/img/vender.png" WIDTH=50 HEIGHT=50></span>
 					</div>
 					<div class="service-desc">
 						<h5>Compra de Residuos </h5>
@@ -171,7 +233,7 @@
 						<li>Progreso del servicio a través de la plataforma e interfaz móvil de ServiAmb</l1>
 
 						</p>
-						<a href="#" class="btn btn-skin">Home</a>
+						<a href="assets/index/#" class="btn btn-skin">Home</a>
 					</div>
                 </div>
 				</div>
@@ -180,7 +242,7 @@
 				<div class="animated rotateInDownLeft slow">
                 <div class="service-box">
 					<div class="service-icon">
-						<span ><img src="assets/index//img/ne.jpg" WIDTH=50 HEIGHT=50></span>
+						<span ><img src="assets/index/img/ne.jpg" WIDTH=50 HEIGHT=50></span>
 					</div>
 					<div class="service-desc">
 						<h5>Venta de Residuos </h5>
@@ -198,7 +260,7 @@
 						<li>Progreso del servicio a través de la plataforma e interfaz móvil de ServiAmb.</li>
 
 						</p>
-						<a href="#" class="btn btn-skin">Home</a>
+						<a href="assets/index/#" class="btn btn-skin">Home</a>
 					</div>
                 </div>
 				</div>
@@ -207,7 +269,7 @@
 				<div class="animated rotateInDownLeft slower">
                 <div class="service-box">
 					<div class="service-icon">
-						<span ><img src="assets/index//img/ges.png" WIDTH=50 HEIGHT=50></span>
+						<span ><img src="assets/index/img/ges.png" WIDTH=50 HEIGHT=50></span>
 					</div>
 					<div class="service-desc">
 						<h5>Gestionar Residuos </h5>
@@ -222,7 +284,7 @@
 						<li>Progreso del servicio a través de la plataforma e interfaz móvil de ServiAmb.</li>
 
 						</p>
-						<a href="#" class="btn btn-skin">Home</a>
+						<a href="assets/index/#" class="btn btn-skin">Home</a>
 					</div>
                 </div>
 				</div>
@@ -261,47 +323,47 @@
                     <div class="row gallery-item">
                         <div class="col-md-3 animated fadeInUp">
 							<a href="assets/index/img/works/1.jpg" class="img-responsive" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="assets/index//img/works/1.jpg" class="img-responsive" alt="img">
+								<img src="assets/index/img/works/1.jpg" class="img-responsive" alt="img">
 							</a>
 							<h3 class="text-center">Liliana Castillo </h3>
 							<p class="text-center">Ingeniera Ambiental</p>
-							<a href="https://www.facebook.com/"><img src="assets/index//img/icon-redes/1.png" alt=""></a>
-								<a href="http://wwww.twitter.com"><img src="assets/index//img/icon-redes/2.png" alt=""></a>
-								<a href="http://wwww.instagram.com"><img src="assets/index//img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index//img/icon-redes/5.png" alt=""></a>
+							<a href="assets/index/s://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
+								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
+								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
+
 						</div>
 						<div class="col-md-3 animated fadeInUp slow">
 							<a href="assets/index/img/works/2.jpg" class="img-responsive" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="assets/index//img/works/2.jpg" class="img-responsive" alt="img">
+								<img src="assets/index/img/works/2.jpg" class="img-responsive" alt="img">
 							</a>
 							<h3 class="text-center">Daniela Garcia </h3>
 							<p class="text-center">Ingeniera Ambiental</p>
-							<a href="https://www.facebook.com/"><img src="assets/index//img/icon-redes/1.png" alt=""></a>
-								<a href="http://wwww.twitter.com"><img src="assets/index//img/icon-redes/2.png" alt=""></a>
-								<a href="http://wwww.instagram.com"><img src="assets/index//img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index//img/icon-redes/5.png" alt=""></a>
+							<a href="https://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
+								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
+								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
+
 						</div>
 						<div class="col-md-3 animated fadeInUp slower">
 							<a href="assets/index/img/works/3.jpg" class="img-responsive"data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="assets/index//img/works/3.jpg" class="img-responsive" alt="img">
+								<img src="assets/index/img/works/3.jpg" class="img-responsive" alt="img">
 							</a>
 							<h3 class="text-center">Rafael Chamorro </h3>
 							<p class="text-center">Ingeniero Industrial</p>
-							<a href="https://www.facebook.com/"><img src="assets/index//img/icon-redes/1.png" alt=""></a>
-								<a href="http://wwww.twitter.com"><img src="assets/index//img/icon-redes/2.png" alt=""></a>
-								<a href="http://wwww.instagram.com"><img src="assets/index//img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index//img/icon-redes/5.png" alt=""></a>
+							<a href="https://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
+								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
+								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
+
 						</div>
 						<div class="col-md-3 animated fadeInUp">
 							<a href="assets/index/img/works/4.jpg" class="img-responsive"data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="assets/index//img/works/4.jpg" class="img-responsive" alt="img">
+								<img src="assets/index/img/works/4.jpg" class="img-responsive" alt="img">
 							</a>
 							<h3 class="text-center">Keiner Pajaro </h3>
 							<p class="text-center">Ingeniero Sistemas</p>
-							<a href="https://www.facebook.com/"><img src="assets/index//img/icon-redes/1.png" alt=""></a>
-								<a href="http://wwww.twitter.com"><img src="assets/index//img/icon-redes/2.png" alt=""></a>
-								<a href="http://wwww.instagram.com"><img src="assets/index//img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index//img/icon-redes/5.png" alt=""></a>
+							<a href="https://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
+								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
+								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
+
 						</div>
 					</div>
 
@@ -320,7 +382,7 @@
 							<a href="https://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
 								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
 								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index/img/icon-redes/5.png" alt=""></a>
+
 						</div>
 						<div class="col-md-3 animated fadeInUp slow">
 							<a href="assets/index/img/works/6.jpg" class="img-responsive" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
@@ -331,7 +393,7 @@
 							<a href="https://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
 								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
 								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index/img/icon-redes/5.png" alt=""></a>
+
 						</div>
 						<div class="col-md-3 animated fadeInUp slower">
 							<a href="assets/index/img/works/7.jpg" class="img-responsive" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
@@ -339,10 +401,10 @@
 							</a>
 							<h3 class="text-center">Carlos Mendoza </h3>
 							<p class="text-center">Ingeniero Sistemas</p>
-							<a href="https://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
+							<a href="ahttps://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
 								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
 								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index/img/icon-redes/5.png" alt=""></a>
+
 						</div>
 						<div class="col-md-3 animated fadeInUp">
 							<a href="assets/index/img/works/8.jpg" class="img-responsive" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
@@ -350,10 +412,10 @@
 							</a>
 							<h3 class="text-center">Esnayder Morales </h3>
 							<p class="text-center">Ingeniero Sistemas</p>
-							<a href="https://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
+							<a href="ahttps://www.facebook.com/"><img src="assets/index/img/icon-redes/1.png" alt=""></a>
 								<a href="http://wwww.twitter.com"><img src="assets/index/img/icon-redes/2.png" alt=""></a>
-								<a href="http://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
-								<a href="http://wwww.linkedin.com"><img src="assets/index/img/icon-redes/5.png" alt=""></a>
+								<a href="ahttp://wwww.instagram.com"><img src="assets/index/img/icon-redes/3.png" alt=""></a>
+
 						</div>
 					</div>
 
@@ -363,6 +425,8 @@
 
 	</section>
 	<!-- /Section: works -->
+
+
 
 
 	<!-- Section: contact -->
@@ -401,7 +465,7 @@
 								</div>
 								<div class="form-group">
 									<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
-										placeholder="Mensage"></textarea>
+										placeholder="Mensaje"></textarea>
 								</div>
 								<button type="submit" class="btn btn-skin btn-lg btn-block" id="btnContactUs">
 									Enviar Mensaje</button>
@@ -424,12 +488,12 @@
 			<div class="row">
 				<div class="col-md-6">
 					<ul class="footer-menu">
-						<li><a href="#">Home</a></li>
+						<li><a href="assets/index/#">Home</a></li>
 
 					</ul>
 				</div>
 				<div class="col-md-6 text-right">
-					<p>&copy;Copyright 2016 - <a href="index.html">ServiAmb</a> by ServiAmb</p>
+					<p>&copy;Copyright 2016 - <a href="assets/index/#intro">ServiAmb</a> by ServiAmb</p>
                     <!--
                         All links in the footer should remain intact.
                         Licenseing information is available at: http://bootstraptaste.com/license/
