@@ -55,6 +55,7 @@
 		        <li class="active"><a href="{{route('subasta')}}">Propuestas</a></li>
 		        <li><a href="{{ route('negocios') }}">Negocios</a></li>
 		        <li><a href="{{ route('procesos') }}">Procesos</a></li>
+						<li><a href="{{ route('informes') }}">Informes</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 						<li>
@@ -144,6 +145,7 @@
             <a type="button" class="list-group-item" href="{{ route('subasta') }}"><span class="glyphicon glyphicon-duplicate"> </span> Propuesta</a>
             <a class="list-group-item" href="{{ route('procesos') }}"><span class="glyphicon glyphicon-tasks"> </span> Procesos</a>
             <a type="button" class="list-group-item" href="{{ route('negocios') }}"><span class="glyphicon glyphicon-briefcase"></span> Negocios</a>
+						<a type="button" class="list-group-item" href="{{ route('informes') }}"><span class="glyphicon glyphicon-paperclip"></span> Informes</a>
           </div>
         </div>
 

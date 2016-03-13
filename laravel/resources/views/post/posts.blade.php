@@ -10,11 +10,19 @@
 
 						<ul class="media-list">
 							<li class="li media">
+								@if($solicitud->tipoSolicitud == 'Vender')
 								<div class="media-left">
 									<div class="letra">
 										<p class="text-big text-center"><b>P</b></h1>
 									</div>
 								</div>
+								@else
+								<div class="media-left">
+									<div class="letra">
+										<p class="text-big text-center"><b>G</b></h1>
+									</div>
+								</div>
+								@endif
 								<div class="media-body">
 
 									<h4 class="media-heading">{{ $solicitud->titulo }}<small> {{ $solicitud->created_at }}</small></h4>
@@ -40,6 +48,7 @@
 										</div>
 										@endif
 								</div>
+								@if($solicitud->tipoSolicitud == 'Vender')
 								<div class="container">
 									<div class="row">
 										<div class="col-md-12">
@@ -61,6 +70,7 @@
 														<textarea type="text" class="form-control" name="descripcion" cols="40" rows="5" placeholder="Depcripcion."></textarea>
 													</div>
 													<input type="hidden" class="form-control" name="idSolicitud" value="{{ $solicitud->id }}">
+													<input type="hidden" class="form-control" name="tipoRespuesta" value="{{ $solicitud->tipoSolicitud }}">
 													<br>
 													<button type="submit" class="btn btn-default">Proponer</button>
 												</form>
@@ -71,6 +81,40 @@
 									</div>
 
 								</div>
+								@else
+								<div class="container">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="collapse" id="{{ $solicitud->id }}">
+												@include('partials/errors')
+												<form role="form" method="POST" action="{{ route('propuesta') }}">
+													<input type="hidden" name="_token" value="{{ csrf_token() }}">
+													<div class="form-group has-feedback">
+														<label class="control-label"></label>
+														<div class="input-group">
+															<span class="input-group-addon">$</span>
+															<input name="valor" type="text" class="form-control" placeholder="Oferta Monetaria.">
+														</div>
+													</div>
+													<label class="control-label">Tipo Tratamiento</label>
+													<br>
+													<div class="input-group">
+														<span class="input-group-addon"> </span>
+														<input type="text" class="form-control" name="descripcion"  placeholder="Tipo tratamiento"></input>
+													</div>
+													<input type="hidden" class="form-control" name="idSolicitud" value="{{ $solicitud->id }}">
+													<input type="hidden" class="form-control" name="tipoRespuesta" value="{{ $solicitud->tipoSolicitud }}">
+													<br>
+													<button type="submit" class="btn btn-default">Postular</button>
+												</form>
+
+											</div>
+
+										</div>
+									</div>
+
+								</div>
+				@endif
 							</li>
 						</ul>
 

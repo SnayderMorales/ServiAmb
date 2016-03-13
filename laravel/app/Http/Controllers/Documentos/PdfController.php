@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Propuesta;
+namespace App\Http\Controllers\Documentos;
 
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ use Validator;
 use DB;
 use Carbon\Carbon;
 
-class PropuestaController extends Controller
+class PdfController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,14 @@ class PropuestaController extends Controller
      */
     public function index()
     {
-        return view('propuesta/mipropuesta');
+      $respuestas = \DB::table('respuestas')
+      ->select('*')
+      ->where('tipoRespuesta','Gestionar')
+      ->where('estado',2)
+      ->get();
+
+
+      return view('documento/documentos',['respuestas'=>$respuestas]);
     }
 
     /**
@@ -29,29 +36,35 @@ class PropuestaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create($id)
     {
-      $this ->validate($request, [
-            'descripcion' => 'required|max:2000',
-            'valor' => 'required|max:40',
-        ]);
-        $user = \Auth::user();
-        $post = new Respuesta;
-        $post -> descripcion = $request->descripcion;
-        $post -> idEmpresa = $user->email;
-        $post -> valor = $request->valor;
-        $post -> idSolicitud = $request->idSolicitud;
-        $post -> tipoRespuesta = $request->tipoRespuesta;
-        $post ->save();
-        $negocio = new Negocio;
-        $negocio -> idSolicitud = $request->idSolicitud;
-        $negocio -> idRespuesta = $post->id;
-        $negocio -> estado = 1;
-        $negocio ->save();
-        return 	redirect('notices')->with('success', 'Ninguno');
-
-
+      $respuestas = \DB::table('respuestas')
+      ->select('*')
+      ->where('id',$id)
+      ->first();
+      $empresa = \DB::table('empresas')
+      ->select('*')
+      ->where('idEmpresa',$respuestas->idEmpresa)
+      ->first();
+      $solicitud = \DB::table('solicitudes')
+      ->select('*')
+      ->where('id',$respuestas->idSolicitud)
+      ->first();
+      $view =  \View::make('documento.invoice', compact('respuestas','empresa','solicitud'))->render();
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHTML($view);
+      return $pdf->stream('invoice');
     }
+
+    public function getData()
+   {
+    /* $respuestas = \DB::table('respuestas')
+     ->select('*')
+     ->where('tipoRespuesta',$id)
+     ->first();
+
+       return $respuestas;*/
+   }
 
     /**
      * Store a newly created resource in storage.
@@ -70,16 +83,9 @@ class PropuestaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showPropuesta($id)
+    public function show($id)
     {
-
-
-      $respuestas = \DB::table('respuestas')
-      ->select('*')
-      ->where('idSolicitud',$id)
-      ->orderBy('id','desc')->get();
-
-      return view('propuesta/subasta',['respuestas'=>$respuestas]);
+        //
     }
 
     /**
@@ -88,13 +94,9 @@ class PropuestaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function edit($id)
     {
-      $solicitudes = \DB::table('solicitudes')
-      ->select('*')
-      ->orderBy('id','desc')->get();
-
-      return view('propuesta/respuesta',['solicitudes'=>$solicitudes]);
+        //
     }
 
     /**
