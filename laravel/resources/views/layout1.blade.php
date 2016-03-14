@@ -55,7 +55,7 @@
 		        <li class="active"><a href="{{route('subasta')}}">Propuestas</a></li>
 		        <li><a href="{{ route('negocios') }}">Negocios</a></li>
 		        <li><a href="{{ route('procesos') }}">Procesos</a></li>
-						<li><a href="{{ route('informes') }}">Informes</a></li>
+						<li><a href="{{ route('informe') }}">Informes</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 						<li>

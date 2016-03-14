@@ -128,13 +128,13 @@ Route::get('notices', [
                             'as' => 'perfil'
                             ]);
 
-                            Route::get('informes', [
+                            Route::get('informe', [
                                         'middleware' => 'auth',
                                         'uses' => 'Documentos\PdfController@index',
-                                        'as' => 'informes'
+                                        'as' => 'informe'
                                         ]);
 
-                                        Route::get('informes/{id}', [
+                                        Route::get('informes/mis/{id}', [
                                                     'middleware' => 'auth',
                                                     'uses' => 'Documentos\PdfController@create',
                                                     'as' => 'informes'

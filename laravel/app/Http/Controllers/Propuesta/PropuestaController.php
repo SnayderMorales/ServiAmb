@@ -78,7 +78,7 @@ class PropuestaController extends Controller
       ->select('*')
       ->where('idSolicitud',$id)
       ->orderBy('id','desc')->get();
-
+      
       return view('propuesta/subasta',['respuestas'=>$respuestas]);
     }
 

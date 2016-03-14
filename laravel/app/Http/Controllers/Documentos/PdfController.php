@@ -21,12 +21,13 @@ class PdfController extends Controller
      */
     public function index()
     {
+      $user = \Auth::user();
       $respuestas = \DB::table('respuestas')
       ->select('*')
       ->where('tipoRespuesta','Gestionar')
       ->where('estado',2)
+      ->where('idEmpresa',$user->email)
       ->get();
-
 
       return view('documento/documentos',['respuestas'=>$respuestas]);
     }

@@ -39,20 +39,14 @@ class NegocioController extends Controller
       $fase = \DB::table('negocios')
       ->select('*')
       ->where('idSolicitud',$id)
-      ->where('estado','2')
       ->first();
-      if ($fase != null){
+
       $respuestas = \DB::table('respuestas')
       ->select('*')
       ->where('id',$fase->idRespuesta)
-      ->where('estado','1')
       ->first();
-    }else{
-      $respuestas = \DB::table('respuestas')
-      ->select('*')
-      ->where('id',3)
-      ->first();
-    }
+
+
       return view('negocio/negocio',['respuestas'=>$respuestas]);
     }
 
@@ -60,23 +54,41 @@ class NegocioController extends Controller
 
     public function indexP($id)
     {
-
       $fase = \DB::table('negocios')
       ->select('*')
       ->where('idRespuesta',$id)
-      ->where('estado','2')
       ->first();
-      if ($fase != null){
-      $solicitudes = \DB::table('solicitudes')
-      ->select('*')
-      ->where('id',$fase->idSolicitud)
-      ->first();
-    }else{
-      $solicitudes = \DB::table('solicitudes')
-      ->select('*')
-      ->where('id',3)
-      ->first();
-    }
+
+      /*if($fase == null){
+        for($i = 1; $fase != null;$i++){
+          $fase = \DB::table('negocios')
+          ->select('*')
+          ->where('idRespuesta',$id)
+          ->where('estado',$i)
+          ->first();
+
+        }
+        return dd($fase);
+        $solicitudes = \DB::table('solicitudes')
+        ->select('*')
+        ->where('id',$fase->idSolicitud)
+        ->first();
+      }else{
+              $solicitudes = \DB::table('solicitudes')
+              ->select('*')
+              ->where('id',$fase->idSolicitud)
+              ->first();
+            }*/
+            $solicitudes = \DB::table('solicitudes')
+            ->select('*')
+            ->where('id',$fase->idSolicitud)
+            ->first();
+
+
+      //return dd($solicitudes);
+
+
+
       return view('negocio/procesos',['solicitudes'=>$solicitudes]);
 
     }
@@ -168,6 +180,7 @@ class NegocioController extends Controller
      */
     public function perfil($id)
     {
+
       $idEmpresa = DB::table('solicitudes')
       ->select('*')
       ->where('id',$id)
@@ -184,6 +197,7 @@ class NegocioController extends Controller
 
     public function perfilr($id)
     {
+
       $idEmpresa = DB::table('respuestas')
       ->select('*')
       ->where('id',$id)

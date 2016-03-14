@@ -13,10 +13,11 @@
         </div>
         <div class="media-body">
           <h4 class="media-heading">Mis Informes</h4>
+
           	@forelse ($respuestas as $respuesta)
             <div class="row">
                 <div class="col-sm-12 portfolio-item">
-                    <a href="informes/{{ $respuesta->id }}"><h1>{{ $respuesta->descripcion }}</h1></a>
+                    <a href="informes/mis/{{ $respuesta->id }}"><h1>{{ $respuesta->descripcion }}</h1></a>
                     <small>{{ $respuesta->created_at }}</small>
                 </div>
             </div>
