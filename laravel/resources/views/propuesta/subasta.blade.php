@@ -15,8 +15,13 @@
 						<p class="text-big text-center"><b>S</b></h1>
 					</div>
 				</div>
+
 				<div class="media-body">
+					@if($respuesta->tipoRespuesta == 'Vender')
 					<h1>{{ $respuesta->descripcion }}</h1>
+					@else
+					<h1>Tratamiento: {{ $respuesta->descripcion }}</h1>
+					@endif
 					<p>Mi oferta es: ${{ $respuesta->valor }} pesos</p>
 					<small>{{ $respuesta->created_at }}</small>
 				</div>
@@ -30,7 +35,7 @@
 						<form role="form" method="POST" action="{{ route('aceptar') }}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" class="form-control" name="aceptar" value="{{ $respuesta->id }}">
-							
+
 						<button class="btn btn-lg btn-block" type="submit" data-toggle="collapse" data-target="#" aria-expanded="false" aria-controls=""><span class="glyphicon glyphicon-usd"> </span> Aceptar</button>
 							</form>
 					</div>

@@ -22,9 +22,9 @@ class PdfController extends Controller
     public function index()
     {
       $user = \Auth::user();
-      $respuestas = \DB::table('respuestas')
+      $respuestas = \DB::table('solicitudes')
       ->select('*')
-      ->where('tipoRespuesta','Gestionar')
+      ->where('tipoSolicitud','Gestionar')
       ->where('estado',2)
       ->where('idEmpresa',$user->email)
       ->get();
@@ -41,7 +41,7 @@ class PdfController extends Controller
     {
       $respuestas = \DB::table('respuestas')
       ->select('*')
-      ->where('id',$id)
+      ->where('idSolicitud',$id)
       ->first();
       $empresa = \DB::table('empresas')
       ->select('*')
