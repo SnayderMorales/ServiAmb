@@ -42,6 +42,14 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
+//sello de verificacion
+Route::get('sello', [
+  'middleware' => 'auth',
+  'uses'=>'Negocio\NegocioController@indexSello',
+  'as' => 'sello'
+  ]);
+Route::post('sello', 'Negocio\NegocioController@confirmar');
+
 Route::get('newpost', [
   'middleware' => 'auth',
   'uses' => 'Solicitud\SolicitudController@index',

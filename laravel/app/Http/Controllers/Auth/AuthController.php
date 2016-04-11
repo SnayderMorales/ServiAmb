@@ -4,10 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Empresa;
+use App\Http\Requests;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use  Illuminate\Http\Request;
+use Input;
+
 
 class AuthController extends Controller
 {
@@ -39,7 +43,7 @@ class AuthController extends Controller
     {
       $residuos = \ DB::table('residuos')->get();
 
-      return view('auth\register',['residuos'=>$residuos]);
+      return View('auth\register',['residuos'=>$residuos]);
     }
     /**
      * Get a validator for an incoming registration request.
@@ -56,6 +60,9 @@ class AuthController extends Controller
             'residuo' => 'required',
             'nit' => 'required|max:60|unique:empresas',
             'razonSocial' => 'required|max:60',
+            'direccion' => 'required|max:60',
+            'telefono' => 'required|max:15',
+            'file' => 'required'
         ]);
     }
 
@@ -83,6 +90,11 @@ class AuthController extends Controller
       }else{
         $gestor = 0;
       }
+      //$request =  Request::all();
+      $file = $data['file'];
+      $nombre = $file->getClientOriginalName();
+      $hash = hash_file('md5', $file);
+      \Storage::disk('local')->put("/camara/".$nombre,  \File::get($file));
 
       Empresa::create([
         'idEmpresa'=>$data['email'],
@@ -93,6 +105,10 @@ class AuthController extends Controller
         'gestor' => $gestor,
         'razonSocial' => $data['razonSocial'],
         'idEmpresaResiduo' => $data['residuo'],
+        'telefono' => $data['telefono'],
+        'direccion' => $data['direccion'],
+        'camara' => $nombre,
+        'hash' => $hash,
         ]);
       return User::create([
           'name' => $data['name'],

@@ -22,6 +22,10 @@ class EmpresaTable extends Migration
           $table->string('gestor');
           $table->string('vendedor');
           $table->string('comprador');
+          $table->string('telefono',15);
+          $table->string('direccion',60);
+          $table->string('camara');
+          $table->string('hash');
           $table->rememberToken();
           $table->timestamps();
           });

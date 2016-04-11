@@ -50,6 +50,11 @@ class NegocioController extends Controller
       return view('negocio/negocio',['respuestas'=>$respuestas]);
     }
 
+    public function indexSello()
+    {
+      return \View::make('auth/sello');
+    }
+
 
 
     public function indexP($id)
@@ -216,9 +221,27 @@ class NegocioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function confirmar(Request $request)
     {
-        //
+      $this ->validate($request, [
+            'file' => 'required'
+        ]);
+      $user = \Auth::user();
+      $consulta = \DB::table('empresas')
+      ->select(['empresas.camara','empresas.hash'])
+      ->where('idEmpresa',$user->email)->first();
+
+      $file = $request->file('file');
+      $nombre = $file->getClientOriginalName();
+      $hash = hash_file('md5', $file);
+      \Storage::disk('local')->put("/camara/".$nombre,  \File::get($file));
+      $consulta = \DB::table('empresas')
+      ->select(['empresas.camara','empresas.hash'])
+      ->where('idEmpresa',$user->email)
+      ->update(['camara' => $nombre,
+                'hash' => $hash]);
+                return redirect('notices')->with('success', 'Ninguno');
+
     }
 
     /**
