@@ -59,7 +59,7 @@
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 						<li>
-							<button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="newpost">Publicar</a></button>
+							<button type="button" class="btn btn-success navbar-btn"><a href="{{ route ('newpost') }}">Publicar</a></button>
 						</li>
 						<li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> <span class="caret"></span></a>
@@ -183,25 +183,6 @@
       </div>
     </div>
     </section>
-
-		<section id="modal">
-
-
-		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-		  <div class="modal-dialog modal-lg">
-		    <div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					</div>
-
-		    	<h1 class="text-center">Ventana Modal</h1>
-
-		    </div>
-		  </div>
-		</div>
-
-
-		</section>
 
 
 

@@ -4,11 +4,17 @@
 <head>
     <link rel="icon" href="assets/img/logo/logo.small.png">
     <title>ServiAmb</title>
+    <style="">
+      body{
+        background-image: url('assets/img/logo/bg-pdf.jpg');
+      }
+    </style>
   </head>
 
-<body lang=ES-CO style='tab-interval:35.4pt'>
+<body lang=ES-CO style='tab-interval:35.4pt' background-image="assets/img/logo/bg-pdf.jpg">
 <div>
-  <img src="assets/img/logo/logo.small.png" WIDTH=100 HEIGHT=20>
+  <img src="assets/img/logo/logo.small.png" WIDTH=20 HEIGHT=20>
+ &nbsp;
   <img src="assets/index/img/nombre.png" WIDTH=100 HEIGHT=20>
 </div>
 <div class=WordSection1>
@@ -47,7 +53,7 @@ mso-bidi-font-family:"Arial Unicode MS"'>NIT: {{ $empresa->nit }}<o:p></o:p></sp
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><span
 lang=ES-MX style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:115%;
 font-family:"Arial Narrow","sans-serif";mso-fareast-font-family:"Arial Unicode MS";
-mso-bidi-font-family:"Arial Unicode MS"'>Ubicación:<o:p></o:p></span></p>
+mso-bidi-font-family:"Arial Unicode MS"'>Ubicación:  {{ $empresa->direccion }}<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><span
 lang=ES-MX style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:115%;
@@ -78,12 +84,7 @@ mso-bidi-font-family:"Arial Unicode MS"'>Personal encargado:<o:p></o:p></span></
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><span
 lang=ES-MX style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:115%;
 font-family:"Arial Narrow","sans-serif";mso-fareast-font-family:"Arial Unicode MS";
-mso-bidi-font-family:"Arial Unicode MS"'>Departamento:<o:p></o:p></span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-align:justify'><span
-lang=ES-MX style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:115%;
-font-family:"Arial Narrow","sans-serif";mso-fareast-font-family:"Arial Unicode MS";
-mso-bidi-font-family:"Arial Unicode MS"'>Teléfono:<o:p></o:p></span></p>
+mso-bidi-font-family:"Arial Unicode MS"'>Teléfono:  {{ $empresa->telefono }}<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-align:justify'><span
 lang=ES-MX style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:115%;
